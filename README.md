@@ -1,1 +1,2 @@
 # Tennessee_Real_Estate
+In this project, I employ MySQL for data cleansing and exploration, aiming to derive insights into the Tennessee housing market. This project make extensive use of advanced tools such as Common Table Expressions (CTEs), Window Functions, and Aggregate Functions to handle complex queries and data analysis efficiently. With the exploration process, for instance, I looked at net profit and land value of properties and developed a program to calculate the Return on Investment (ROI) for properties using Parcel ID as the input.
