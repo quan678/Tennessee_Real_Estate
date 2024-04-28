@@ -4,16 +4,16 @@ CREATE DATABASE housing_market;
 USE housing_market;
 CREATE TABLE housing_info
 (
-	UniqueID INT PRIMARY KEY,
+    UniqueID INT PRIMARY KEY,
     ParcelID VARCHAR(150) NULL,
     Land_Use VARCHAR(150) NULL,
     Property_Address varchar(150) NULL,
-	Sale_Date VARCHAR(150) NULL,
+    Sale_Date VARCHAR(150) NULL,
     Sale_Price INT NULL,
     Legal_Reference VARCHAR(150) NULL,
     Sold_As_Vacant VARCHAR(100) NULL,
     Owner_Name VARCHAR(100) NULL,
-	Owner_Address VARCHAR(150) NULL,
+    Owner_Address VARCHAR(150) NULL,
     Acreage FLOAT NULL,
     Tax_District VARCHAR(150) NULL,
     Land_Value INT NULL,
@@ -28,11 +28,11 @@ CREATE TABLE housing_info
 -- Create a back-up table
 CREATE TABLE housing_info_back_up
 (
-	UniqueID INT PRIMARY KEY,
+    UniqueID INT PRIMARY KEY,
     ParcelID VARCHAR(150) NULL,
     Land_Use VARCHAR(150) NULL,
     Property_Address varchar(150) NULL,
-	Sale_Date VARCHAR(150) NULL,
+    Sale_Date VARCHAR(150) NULL,
     Sale_Price INT NULL,
     Legal_Reference VARCHAR(150) NULL,
     Sold_As_Vacant VARCHAR(100) NULL,
@@ -75,8 +75,8 @@ INSERT INTO owner_status
 (
 	SELECT
 		UniqueID,
-        Owner_Name,
-        Owner_Address
+        	Owner_Name,
+        	Owner_Address
 	FROM
 		housing_info
     );
