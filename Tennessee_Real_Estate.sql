@@ -69,7 +69,7 @@ CREATE TABLE owner_status
 	UniqueID INT,
 	FOREIGN KEY (UniqueID) REFERENCES housing_info(UniqueId),
 	Owner_Name VARCHAR(250),
-    Owner_Address VARCHAR(250)
+    	Owner_Address VARCHAR(250)
     );
 INSERT INTO owner_status
 (
@@ -82,7 +82,7 @@ INSERT INTO owner_status
     );
 ALTER TABLE housing_info
 	DROP Owner_Name,
-    DROP Owner_Address;
+    	DROP Owner_Address;
 -- ------ Column 'ParcelID' ------ --
 -- Check for missing values
 SELECT
@@ -109,8 +109,8 @@ SELECT
 	COUNT(h2.Land_Use) AS unique_values_count
 FROM
 	housing_info h1
-    JOIN
-    housing_info h2 ON h1.UniqueID = h2.UniqueID
+    	JOIN
+    	housing_info h2 ON h1.UniqueID = h2.UniqueID
 GROUP BY h1.Land_Use
 ORDER BY unique_values_count DESC;
 -- Omit the unecessary information of each value to save memory
@@ -119,7 +119,7 @@ SET Land_Use = REPLACE(Land_Use, 'FAMILY' , ''),
 	Land_Use = REPLACE(Land_Use, 'LAND', ''),
 	Land_Use = REPLACE(Land_Use, '(ONE OR TWO STORIES)', ''),
 	Land_Use = REPLACE(Land_Use, 'LOW RISE (BUILT SINCE 1960)', ''),
-    Land_Use = REPLACE(Land_Use, 'WITHOUT GAS', '');
+    	Land_Use = REPLACE(Land_Use, 'WITHOUT GAS', '');
 UPDATE housing_info
 SET Land_Use = SUBSTRING(Land_Use, LOCATE('RETAIL', Land_Use), LENGTH(Land_Use))
 WHERE
@@ -147,12 +147,12 @@ ORDER BY unique_values_count DESC;
 -- Break the address into individual columns, one containing the street name and another containing the city
 SELECT
     property_address,
-	SUBSTRING(property_address, 1, LOCATE(',', Property_Address) - 1) AS Property_Address,
+    SUBSTRING(property_address, 1, LOCATE(',', Property_Address) - 1) AS Property_Address,
     SUBSTRING(property_address, LOCATE(',', Property_Address) + 1) AS Property_City
 FROM
-	housing_info
+    housing_info
 WHERE
-	UniqueID = 2;
+    UniqueID = 2;
 ALTER TABLE housing_info
 ADD Property_Addr VARCHAR(250),
 ADD Property_City VARCHAR(250);
@@ -225,7 +225,7 @@ GROUP BY h1.Tax_District;
 -- Omit the unecessary information of each value
 UPDATE housing_info
 SET Tax_District = REPLACE(Tax_District, 'DISTRICT' , ''),
-	Tax_District = REPLACE(Tax_District, 'CITY OF', '');
+    Tax_District = REPLACE(Tax_District, 'CITY OF', '');
 -- --------------------------------------------------------- --                  
 -- ----------- Data Exploration Stage ------------ --
 SELECT
