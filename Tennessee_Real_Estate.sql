@@ -244,16 +244,16 @@ ORDER BY Average_Price DESC;
 WITH Property_Price_ctes AS (
 	SELECT
 		ParcelID,
-        Property_Addr,
-        Property_City,
-        Sale_Price,
-        Tax_District,
-        RANK() OVER(PARTITION BY Tax_District ORDER BY Sale_Price DESC) AS Price_Ranking
+        	Property_Addr,
+        	Property_City,
+        	Sale_Price,
+        	Tax_District,
+        	RANK() OVER(PARTITION BY Tax_District ORDER BY Sale_Price DESC) AS Price_Ranking
 	FROM
 		housing_info
 )
 SELECT
-	Property_Addr,
+    Property_Addr,
     Property_City,
     Sale_Price,
     Tax_District,
@@ -265,13 +265,13 @@ WHERE
 -- Create stored procedure to calculate the ROI for each property
 -- Check data available for calculating
 SELECT
-	h1.ParcelID,
-	h1.Sale_Price AS Latest_Price,
+    h1.ParcelID,
+    h1.Sale_Price AS Latest_Price,
     h2.Total_Value,
     h1.Sale_Date AS Latest_Date,
     h2.Sale_Date
 FROM
-	housing_info h1
+    housing_info h1
     JOIN
     housing_info h2 ON h1.ParcelID = h2.ParcelID
 WHERE
@@ -282,10 +282,10 @@ CREATE PROCEDURE ROI_Calculation(IN in_ParcelID VARCHAR(250))
 BEGIN
 	WITH Property_Price_ctes AS (
 		SELECT
-			h1.ParcelID,
-            h1.Property_Addr,
-            h1.Property_City,
-            h1.Sale_Price AS Latest_Sale_Price,
+	    		h1.ParcelID,
+            		h1.Property_Addr,
+            		h1.Property_City,
+            		h1.Sale_Price AS Latest_Sale_Price,
 			h1.Sale_Date AS Latest_Sale_Date
 		FROM
 			housing_info h1
@@ -296,36 +296,36 @@ BEGIN
         Property_Value_ctes AS (
 		SELECT
 			h1.ParcelID,
-            h1.Total_Value AS Initial_Investment,
-            h1.Sale_Date AS Sale_Date
+            		h1.Total_Value AS Initial_Investment,
+            		h1.Sale_Date AS Sale_Date
 		FROM
 			housing_info h1
-            JOIN
-            housing_info h2 ON h1.ParcelID = h2.ParcelID
+            		JOIN
+            		housing_info h2 ON h1.ParcelID = h2.ParcelID
 		WHERE 
 			h1.Sale_Date < h2.Sale_Date)
 		SELECT 
 			PP_ctes.ParcelID,
-            PP_ctes.Property_Addr,
-            PP_ctes.Property_City,
-            ((PP_ctes.Latest_Sale_Price - PV_ctes.Initial_Investment) / PV_ctes.Initial_Investment) * 100 AS ROI_Calculated 
+            		PP_ctes.Property_Addr,
+            		PP_ctes.Property_City,
+            		((PP_ctes.Latest_Sale_Price - PV_ctes.Initial_Investment) / PV_ctes.Initial_Investment) * 100 AS ROI_Calculated 
 		FROM
 			Property_Price_ctes PP_ctes 
-            JOIN
-            Property_Value_ctes PV_ctes ON PP_ctes.ParcelID = PV_ctes.ParcelID
+            		JOIN
+            		Property_Value_ctes PV_ctes ON PP_ctes.ParcelID = PV_ctes.ParcelID
 		WHERE
 			PP_ctes.ParcelID = in_ParcelID;
 END $$
 DELIMITER ;
 -- Look at the net income of each property and rank them from low to high level of profit
 SELECT
-	ParcelID,
+    ParcelID,
     Property_Addr,
     Property_City,
     Sale_Price - Total_Value AS Net_Income,
     Year_Built,
     CASE WHEN Sale_Price - Total_Value > 150000 THEN 'Very High'
-		 WHEN Sale_Price - Total_Value BETWEEN 100000 AND 150000 THEN 'High'
+	 WHEN Sale_Price - Total_Value BETWEEN 100000 AND 150000 THEN 'High'
          WHEN Sale_Price - Total_Value BETWEEN 50000 AND 100000 THEN 'Medium'
          WHEN Sale_Price - Total_Value BETWEEN 0 AND 50000 THEN 'Low'
          WHEN Sale_Price - Total_Value < 0 THEN 'Loss'
@@ -353,23 +353,21 @@ ORDER BY Land_Value DESC
 LIMIT 40;
 -- Look at average sale price, value and acreage of properties in each city
 SELECT
-	Property_City,
+    Property_City,
     ROUND(AVG(Sale_Price), 2) AS Average_Sale_Price,
     ROUND(AVG(Acreage), 2) AS Average_Acreage
 FROM
-	housing_info
+    housing_info
 WHERE
-	Property_City <> ''
+    Property_City <> ''
 GROUP BY Property_City;
 -- Look at the sale price trend over time in each city
 SELECT 
-	Property_City, 
+    Property_City, 
     Sale_Date, 
     ROUND(AVG(Sale_Price), 2) AS Average_Sale_Price
 FROM 
-	housing_info
-GROUP BY 
-	Property_City, Sale_Date
-ORDER BY 
-	Property_City DESC, Sale_Date ASC;
+    housing_info
+GROUP BY Property_City, Sale_Date
+ORDER BY Property_City DESC, Sale_Date ASC;
 -- ----------------------------------------------------------------------------------------------- -- 
