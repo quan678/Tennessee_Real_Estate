@@ -336,7 +336,7 @@ ORDER BY Net_Income DESC
 LIMIT 20;
 -- Look at the top highest value properties and their characteristic
 SELECT
-	Property_Addr,
+    Property_Addr,
     Property_City,
     Sold_As_Vacant,
     Acreage,
