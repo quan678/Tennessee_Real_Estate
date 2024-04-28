@@ -289,11 +289,11 @@ BEGIN
 			h1.Sale_Date AS Latest_Sale_Date
 		FROM
 			housing_info h1
-            JOIN
-            housing_info h2 ON h1.ParcelID = h2.ParcelID
+        		JOIN
+            		housing_info h2 ON h1.ParcelID = h2.ParcelID
 		WHERE
 			h1.Sale_Date > h2.Sale_Date),
-        Property_Value_ctes AS (
+             Property_Value_ctes AS (
 		SELECT
 			h1.ParcelID,
             		h1.Total_Value AS Initial_Investment,
