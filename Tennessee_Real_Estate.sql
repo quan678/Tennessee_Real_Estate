@@ -115,10 +115,10 @@ ORDER BY unique_values_count DESC;
 -- Omit the unecessary information of each value to save memory
 UPDATE housing_info
 SET Land_Use = REPLACE(Land_Use, 'FAMILY' , ''),
-	Land_Use = REPLACE(Land_Use, 'LAND', ''),
-	Land_Use = REPLACE(Land_Use, '(ONE OR TWO STORIES)', ''),
-	Land_Use = REPLACE(Land_Use, 'LOW RISE (BUILT SINCE 1960)', ''),
-    	Land_Use = REPLACE(Land_Use, 'WITHOUT GAS', '');
+    Land_Use = REPLACE(Land_Use, 'LAND', ''),
+    Land_Use = REPLACE(Land_Use, '(ONE OR TWO STORIES)', ''),
+    Land_Use = REPLACE(Land_Use, 'LOW RISE (BUILT SINCE 1960)', ''),
+    Land_Use = REPLACE(Land_Use, 'WITHOUT GAS', '');
 UPDATE housing_info
 SET Land_Use = SUBSTRING(Land_Use, LOCATE('RETAIL', Land_Use), LENGTH(Land_Use))
 WHERE
