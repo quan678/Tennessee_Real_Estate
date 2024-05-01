@@ -63,7 +63,6 @@ FROM
 ALTER TABLE housing_info
 	DROP COLUMN half_bath;
 -- Break the table into two smaller tables, one is for housing information and the another is for owner status
-DROP TABLE owner_status;
 CREATE TABLE owner_status
 (
 	UniqueID INT,
