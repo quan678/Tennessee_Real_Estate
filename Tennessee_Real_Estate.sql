@@ -1,5 +1,5 @@
 -- ----------------------------------------------------------------------------------------------- -- 
--- ---Create database and its associate table, then import records using MySQL import wiz--- -- 
+-- ---Create database and its associated table, then import records using MySQL import wiz--- -- 
 CREATE DATABASE housing_market;
 USE housing_market;
 CREATE TABLE housing_info
