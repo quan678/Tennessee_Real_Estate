@@ -13,17 +13,17 @@ This repository houses a meticulously crafted MySQL database tailored for robust
 
 ### MySQL as the Backbone
 - **MySQL Database**: Chosen for its proven reliability and performance in handling complex data operations and large-scale databases. MySQL's robust transactional support ensures data integrity and consistency.
-- 
-- ## Tableau Integration for Visualization [(Tableau Visualization)](https://public.tableau.com/app/profile/quan.nguyen5173/viz/TennesseeHousingProject/Dashboard1)
-- **Real-Time Dashboards**: Connect Tableau directly to the MySQL database to create real-time dashboards and reports that visualize key real estate metrics and trends.
-- **Interactive Analytics**: Use Tableau's powerful interactive tools to explore data dynamically, enabling users to drill down into specifics and extract meaningful insights.
-- **Sharing Insights**: Easily share and publish Tableau dashboards with stakeholders to provide updates on market conditions and investment opportunities.
-![image](https://github.com/quan678/Tennessee_Real_Estate/assets/126077946/7d936340-8253-4e52-90de-547f498efd4e)
 
 ### Advanced SQL Features
 - **Common Table Expressions (CTEs)**: Utilized for breaking down complex queries into simpler, more manageable parts. CTEs enhance readability and maintainability of the SQL scripts, making the data transformations easier to understand.
 - **Window Functions**: Employed to perform calculations across sets of rows related to the current row. This is particularly useful for calculating running totals and for ranking and distributing data within your datasets.
 - **Aggregate Functions**: Integral to compiling high-level summaries from transaction data and property listings. Functions like `SUM()`, `AVG()`, are used to derive insights such as average property prices, maximum sales per region, and total investment volumes.
+
+- ## Tableau Integration for Visualization [(Tableau Visualization)](https://public.tableau.com/app/profile/quan.nguyen5173/viz/TennesseeHousingProject/Dashboard1)
+- **Real-Time Dashboards**: Connect Tableau directly to the MySQL database to create real-time dashboards and reports that visualize key real estate metrics and trends.
+- **Interactive Analytics**: Use Tableau's powerful interactive tools to explore data dynamically, enabling users to drill down into specifics and extract meaningful insights.
+- **Sharing Insights**: Easily share and publish Tableau dashboards with stakeholders to provide updates on market conditions and investment opportunities.
+![image](https://github.com/quan678/Tennessee_Real_Estate/assets/126077946/7d936340-8253-4e52-90de-547f498efd4e)
 
 ## Database Schema
 The database schema is thoughtfully designed to encapsulate a comprehensive range of real estate data:
