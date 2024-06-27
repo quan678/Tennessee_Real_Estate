@@ -1,4 +1,4 @@
-# Tennessee Real Estate Database Project
+# Tennessee Real Estate Project
 
 ## Introduction
 This repository houses a meticulously crafted MySQL database tailored for robust management and intricate analysis of real estate data across Tennessee. Designed to serve real estate professionals, market analysts, and investors, this project leverages advanced SQL features and integrates with Tableau for enhanced data visualization capabilities.
