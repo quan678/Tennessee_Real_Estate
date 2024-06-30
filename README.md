@@ -21,7 +21,7 @@ This repository houses a meticulously crafted MySQL database tailored for robust
 - - **Stored Procedures**: Employed to program an ROI calculator that helps investors and analysts assess the profitability of real estate investments by considering various cost factors and expected returns.
 
 - ## Tableau Integration for Visualization [(Tableau Visualization)](https://public.tableau.com/app/profile/quan.nguyen5173/viz/TennesseeHousingProject/Dashboard1)
-- **Real-Time Dashboards**: Connect Tableau directly to the MySQL database to create real-time dashboards and reports that visualize key real estate metrics and trends.
+- **Real-Time Dashboards**: Connect Tableau to the MySQL database to create real-time dashboards and reports that visualize key real estate metrics and trends.
 - **Interactive Analytics**: Use Tableau's powerful interactive tools to explore data dynamically, enabling users to drill down into specifics and extract meaningful insights.
 - **Sharing Insights**: Easily share and publish Tableau dashboards with stakeholders to provide updates on market conditions and investment opportunities.
 ![image](https://github.com/quan678/Tennessee_Real_Estate/assets/126077946/7d936340-8253-4e52-90de-547f498efd4e)
