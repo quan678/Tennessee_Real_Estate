@@ -369,4 +369,5 @@ FROM
     housing_info
 GROUP BY Property_City, Sale_Date
 ORDER BY Property_City DESC, Sale_Date ASC;
+-- --- The End --- -- 
 -- ----------------------------------------------------------------------------------------------- -- 
