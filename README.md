@@ -18,7 +18,7 @@ This repository houses a meticulously crafted MySQL database tailored for robust
 - **Common Table Expressions (CTEs)**: Utilized for breaking down complex queries into simpler, more manageable parts. CTEs enhance readability and maintainability of the SQL scripts, making the data transformations easier to understand.
 - **Window Functions**: Employed to perform calculations across sets of rows related to the current row. This is particularly useful for calculating running totals and for ranking and distributing data within your datasets.
 - **Aggregate Functions**: Integral to compiling high-level summaries from transaction data and property listings. Functions like `SUM()`, `AVG()`, are used to derive insights such as average property prices, maximum sales per region, and total investment volumes.
-- - **Stored Procedures**: Employed to program an ROI calculator that helps investors and analysts assess the profitability of real estate investments by considering various cost factors and expected returns.
+- **Stored Procedures**: Employed to program an ROI calculator that helps investors and analysts assess the profitability of real estate investments by considering various cost factors and expected returns.
 
 - ## Tableau Integration for Visualization [(Tableau Visualization)](https://public.tableau.com/app/profile/quan.nguyen5173/viz/TennesseeHousingProject/Dashboard1)
 - **Real-Time Dashboards**: Connect Tableau to the MySQL database to create real-time dashboards and reports that visualize key real estate metrics and trends.
